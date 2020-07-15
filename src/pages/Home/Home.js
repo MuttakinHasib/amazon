@@ -11,7 +11,7 @@ const Home = () => {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,sapiente culpa mollitia distinctio',
       rating: 4.5,
-      price: '25.5',
+      price: 25.5,
     },
     {
       id: '2',
@@ -20,7 +20,7 @@ const Home = () => {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,sapiente culpa mollitia distinctio',
       rating: 3.9,
-      price: '99.5',
+      price: 99.5,
     },
     {
       id: '3',
@@ -29,7 +29,7 @@ const Home = () => {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,sapiente culpa mollitia distinctio',
       rating: 4.4,
-      price: '80.5',
+      price: 80.5,
     },
   ];
   return (

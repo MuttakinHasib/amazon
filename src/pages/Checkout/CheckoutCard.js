@@ -1,9 +1,19 @@
 import React from 'react';
-import { Button, Divider } from 'antd';
+import { Button } from 'antd';
 import ButtonGroup from 'antd/lib/button/button-group';
 import { MinusOutlined, PlusOutlined, DeleteTwoTone } from '@ant-design/icons';
+import { useStateValue } from '../../context/StateProvider';
+import { REMOVE_FROM_CART } from '../../context/types';
 
-const CheckoutCard = ({ id, title, img, description, price, rating }) => {
+const CheckoutCard = ({ id, title, img, price }) => {
+  const [, dispatch] = useStateValue();
+
+  const removeCart = () => {
+    dispatch({
+      type: REMOVE_FROM_CART,
+      id,
+    });
+  };
   return (
     <div>
       <div className='cart-body d-flex pt-5 justify-content-between align-items-center'>
@@ -25,11 +35,11 @@ const CheckoutCard = ({ id, title, img, description, price, rating }) => {
           </ButtonGroup>
         </div>
         <div className='cart-item price'>
-          <h4>
+          <h6>
             $ <strong>{price}</strong>
-          </h4>
+          </h6>
         </div>
-        <button className='cart-item btn remove-item'>
+        <button onClick={removeCart} className='cart-item btn remove-item'>
           <DeleteTwoTone twoToneColor='#f36' style={{ fontSize: '30px' }} />
         </button>
       </div>

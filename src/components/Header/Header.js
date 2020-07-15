@@ -6,8 +6,7 @@ import './Header.scss';
 import { Badge } from 'antd';
 import { useStateValue } from '../../context/StateProvider';
 const Header = () => {
-  const [{ cart }] = useStateValue();
-console.log(cart);
+  const [{ carts }] = useStateValue();
   return (
     <header className='sticky-top'>
       <nav className='navbar navbar-expand-xl navbar-light bg-light'>
@@ -79,7 +78,7 @@ console.log(cart);
                       0
                     </span>
                   </div> */}
-                  <Badge count={cart?.length}>
+                  <Badge count={carts?.length}>
                     <ShoppingOutlined style={{ fontSize: '35px' }} />
                   </Badge>
                 </Link>

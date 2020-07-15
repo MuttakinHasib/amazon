@@ -1,12 +1,14 @@
 import React from 'react';
 import { Rate, Button } from 'antd';
 import { useStateValue } from '../../context/StateProvider';
+import { ADD_TO_CART } from '../../context/types';
+
 const Product = ({ id, title, img, description, price, rating }) => {
   const [, dispatch] = useStateValue();
 
   const addToCart = () => {
     dispatch({
-      type: 'ADD_TO_CART',
+      type: ADD_TO_CART,
       item: { id, title, img, description, price, rating },
     });
   };
