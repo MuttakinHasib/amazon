@@ -1,0 +1,21 @@
+.cart-item {
+  width: 23%;
+  text-align: center;
+
+  img {
+    width: 50%;
+  }
+}
+
+.remove-item {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.cart-header {
+  div {
+    width: 23%;
+    text-align: center;
+  }
+}
