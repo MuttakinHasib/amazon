@@ -6,8 +6,7 @@ import { Divider } from 'antd';
 
 const Checkout = () => {
   const [{ carts }] = useStateValue();
-
-  const total = carts.reduce((current, carts) => current + carts.price, 0);
+  const total = carts?.reduce((current, carts) => current + carts.price, 0);
 
   const showCartList = (
     <div>
@@ -18,8 +17,8 @@ const Checkout = () => {
         <div className='text-muted h4'>Price</div>
         <div className='text-muted h4'>Remove</div>
       </div>
-      {carts?.map(item => (
-        <CheckoutCard key={item.id} {...item} />
+      {carts?.map((item, i) => (
+        <CheckoutCard key={i} {...item} />
       ))}
       <Divider orientation='right'>
         <h4 className='text-dark'>Subtotal : $ {total}</h4>

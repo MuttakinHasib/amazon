@@ -5,9 +5,9 @@ import { MinusOutlined, PlusOutlined, DeleteTwoTone } from '@ant-design/icons';
 import { useStateValue } from '../../context/StateProvider';
 import { REMOVE_FROM_CART } from '../../context/types';
 
-const CheckoutCard = ({ id, title, img, price }) => {
-  const [, dispatch] = useStateValue();
-
+const CheckoutCard = ({ id, title, img, price, quantity }) => {
+  const [{ carts }, dispatch] = useStateValue();
+  console.log(carts);
   const removeCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
@@ -28,7 +28,7 @@ const CheckoutCard = ({ id, title, img, price }) => {
             <Button>
               <MinusOutlined />
             </Button>
-            <Button type='dashed'>1</Button>
+            <Button type='dashed'>{quantity}</Button>
             <Button>
               <PlusOutlined />
             </Button>
